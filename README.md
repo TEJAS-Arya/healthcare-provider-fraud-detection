@@ -24,3 +24,25 @@ Business Constraints:
 Cost of misclassification is very high. False Negative and False Positive should be as low as possible.If fraudulent providers are predicted as non-fraudulent (False Negative) it is a huge financial loss to the insurer and if legitimate providers are predicted as fraudulent (False Positive) it will cost for investigation and also it's a matter of reputation of the agency.
 Model interpretability is very important because the agency or insurer should justify that fraudulent activity and may need to setup a manual investigation. It should not be a black box type prediction.
 Insurer should pay the claim amount to the provider for legitimate claims within 30 days. So, there is no such strict latency constraints but it should not take more than a day because depending on the output of the model the agency may need to setup an investigation.
+
+
+Objective
+Identify fraudulent claims:
+
+To protect the insurance providers from great loss due to this bad practice.
+To protect the healthcare systen so that they can provide quality and safe care to legitimate patients.
+To reduce the cost of healthcare services.
+
+
+
+Performance Metric:
+1. AUC score 2. F1 Score 3. Confusion Matrix 4. Check FPR and FNR separately
+Train-Test Split and Oversampling:
+As our dataset is imbalanced Legitimate:Fraudulent = 90:10, I need to do oversampling. First I will split the data into Train and Test (Because if oversampling is done first, crossvalidation may contain train data) then I will do oversampling to make 4 sets of data with ratio 80:20, 75:25, 65:35 and 50:50.
+
+Model Selection and Approach to be followed:
+I will use Logistic Regression, Decision Trees, Naive Bayes and SVM for this classification task. For each model, I will do 5 fold cross validation for 10 times then I will take the average. I will compare the scores and pick the best model.
+
+I will do further hyperparameter tuning to get better score.
+
+For further improvement I will use ensemble models.
